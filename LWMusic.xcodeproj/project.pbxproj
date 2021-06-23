@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D5C4FC010AE46EB90F11CFA /* Pods_LWMusic__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */; };
+		A5A04ED8133F9FD58E326A64 /* Pods_LWMusicWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */; };
 		AF21A572266F498300607FCA /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A571266F498300607FCA /* Tests_iOS.swift */; };
 		AF21A57D266F498300607FCA /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A57C266F498300607FCA /* Tests_macOS.swift */; };
 		AF21A57F266F498300607FCA /* LWMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A556266F498100607FCA /* LWMusicApp.swift */; };
@@ -15,6 +17,19 @@
 		AF21A582266F498300607FCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A557266F498100607FCA /* ContentView.swift */; };
 		AF21A583266F498300607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A558266F498300607FCA /* Assets.xcassets */; };
 		AF21A584266F498300607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A558266F498300607FCA /* Assets.xcassets */; };
+		AF21A599266F4C8F00607FCA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF21A598266F4C8F00607FCA /* WidgetKit.framework */; };
+		AF21A59B266F4C8F00607FCA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF21A59A266F4C8F00607FCA /* SwiftUI.framework */; };
+		AF21A59E266F4C8F00607FCA /* LWMusicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */; };
+		AF21A5A1266F4C9000607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A5A0266F4C9000607FCA /* Assets.xcassets */; };
+		AF21A5A3266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */; };
+		AF21A5A4266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */; };
+		AF21A5A7266F4C9000607FCA /* LWMusicWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF21A597266F4C8F00607FCA /* LWMusicWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AF21A5AE266F71DA00607FCA /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A5AD266F71DA00607FCA /* CalculatorButtonItem.swift */; };
+		AF24FFE72679FD18007EA745 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FFE62679FD18007EA745 /* CalculatorBrain.swift */; };
+		AF24FFEA267A0493007EA745 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FFE9267A0493007EA745 /* CalculatorModel.swift */; };
+		AF9E6CAD26834121008DA489 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AF9E6CAC26834121008DA489 /* Kingfisher */; };
+		AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9E6CB32683583E008DA489 /* CalculatorView.swift */; };
+		E93F3BC5582836106D2DB3DB /* Pods_LWMusic__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +47,35 @@
 			remoteGlobalIDString = AF21A564266F498300607FCA;
 			remoteInfo = "LWMusic (macOS)";
 		};
+		AF21A5A5266F4C9000607FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF21A551266F498100607FCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF21A596266F4C8F00607FCA;
+			remoteInfo = LWMusicWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AF21A5AB266F4C9000607FCA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AF21A5A7266F4C9000607FCA /* LWMusicWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0B2DDDF91967977CBD063251 /* Pods-LWMusicWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusicWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-LWMusicWidgetExtension/Pods-LWMusicWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		34071A9A195BCCB09DC91B7B /* Pods-LWMusicWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusicWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-LWMusicWidgetExtension/Pods-LWMusicWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9991ACAA656266C235E034E0 /* Pods-LWMusic (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).release.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusicWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF21A556266F498100607FCA /* LWMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWMusicApp.swift; sourceTree = "<group>"; };
 		AF21A557266F498100607FCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF21A558266F498300607FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +90,22 @@
 		AF21A578266F498300607FCA /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF21A57C266F498300607FCA /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		AF21A57E266F498300607FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF21A597266F4C8F00607FCA /* LWMusicWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LWMusicWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF21A598266F4C8F00607FCA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		AF21A59A266F4C8F00607FCA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWMusicWidget.swift; sourceTree = "<group>"; };
+		AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = LWMusicWidget.intentdefinition; sourceTree = "<group>"; };
+		AF21A5A0266F4C9000607FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF21A5A2266F4C9000607FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF21A5AC266F685300607FCA /* LWMusicWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LWMusicWidgetExtension.entitlements; sourceTree = "<group>"; };
+		AF21A5AD266F71DA00607FCA /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
+		AF24FFE62679FD18007EA745 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
+		AF24FFE9267A0493007EA745 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		AF9E6CB32683583E008DA489 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		BA5EA5DA6D317C1F70E13E4F /* Pods-LWMusic (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).debug.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC7543B27D4C14775F5D81D /* Pods-LWMusic (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (macOS).debug.xcconfig"; path = "Target Support Files/Pods-LWMusic (macOS)/Pods-LWMusic (macOS).debug.xcconfig"; sourceTree = "<group>"; };
+		F5361E6FCFA7F81646B811B3 /* Pods-LWMusic (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (macOS).release.xcconfig"; path = "Target Support Files/Pods-LWMusic (macOS)/Pods-LWMusic (macOS).release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9E6CAD26834121008DA489 /* Kingfisher in Frameworks */,
+				7D5C4FC010AE46EB90F11CFA /* Pods_LWMusic__iOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93F3BC5582836106D2DB3DB /* Pods_LWMusic__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,24 +140,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF21A594266F4C8F00607FCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF21A59B266F4C8F00607FCA /* SwiftUI.framework in Frameworks */,
+				AF21A599266F4C8F00607FCA /* WidgetKit.framework in Frameworks */,
+				A5A04ED8133F9FD58E326A64 /* Pods_LWMusicWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D5426AC636DB9F5716306CA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA5EA5DA6D317C1F70E13E4F /* Pods-LWMusic (iOS).debug.xcconfig */,
+				9991ACAA656266C235E034E0 /* Pods-LWMusic (iOS).release.xcconfig */,
+				DEC7543B27D4C14775F5D81D /* Pods-LWMusic (macOS).debug.xcconfig */,
+				F5361E6FCFA7F81646B811B3 /* Pods-LWMusic (macOS).release.xcconfig */,
+				0B2DDDF91967977CBD063251 /* Pods-LWMusicWidgetExtension.debug.xcconfig */,
+				34071A9A195BCCB09DC91B7B /* Pods-LWMusicWidgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AF21A550266F498100607FCA = {
 			isa = PBXGroup;
 			children = (
+				AF21A5AC266F685300607FCA /* LWMusicWidgetExtension.entitlements */,
 				AF21A555266F498100607FCA /* Shared */,
 				AF21A55F266F498300607FCA /* iOS */,
 				AF21A566266F498300607FCA /* macOS */,
 				AF21A570266F498300607FCA /* Tests iOS */,
 				AF21A57B266F498300607FCA /* Tests macOS */,
+				AF21A59C266F4C8F00607FCA /* LWMusicWidget */,
 				AF21A55E266F498300607FCA /* Products */,
+				6D5426AC636DB9F5716306CA /* Pods */,
+				EBF17D02A3CA42AF337D6C3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		AF21A555266F498100607FCA /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AF9E6CB526835965008DA489 /* VC */,
+				AF9E6CAE268357C0008DA489 /* State */,
+				AF9E6CB2268357FE008DA489 /* Utils */,
+				AF9E6CB1268357ED008DA489 /* Json */,
 				AF21A556266F498100607FCA /* LWMusicApp.swift */,
 				AF21A557266F498100607FCA /* ContentView.swift */,
 				AF21A558266F498300607FCA /* Assets.xcassets */,
@@ -112,6 +203,7 @@
 				AF21A565266F498300607FCA /* LWMusic.app */,
 				AF21A56D266F498300607FCA /* Tests iOS.xctest */,
 				AF21A578266F498300607FCA /* Tests macOS.xctest */,
+				AF21A597266F4C8F00607FCA /* LWMusicWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +243,101 @@
 			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
+		AF21A59C266F4C8F00607FCA /* LWMusicWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */,
+				AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */,
+				AF21A5A0266F4C9000607FCA /* Assets.xcassets */,
+				AF21A5A2266F4C9000607FCA /* Info.plist */,
+			);
+			path = LWMusicWidget;
+			sourceTree = "<group>";
+		};
+		AF9E6CAE268357C0008DA489 /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		AF9E6CB1268357ED008DA489 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Json;
+			sourceTree = "<group>";
+		};
+		AF9E6CB2268357FE008DA489 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AF9E6CB526835965008DA489 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				AF9E6CBA26835A0F008DA489 /* MusicVC */,
+				AF9E6CB9268359FE008DA489 /* UserVC */,
+				AF9E6CB8268359EF008DA489 /* SettingVC */,
+				AF9E6CB7268359D5008DA489 /* PokemonVC */,
+				AF9E6CB626835993008DA489 /* CalculatorVC */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		AF9E6CB626835993008DA489 /* CalculatorVC */ = {
+			isa = PBXGroup;
+			children = (
+				AF24FFE62679FD18007EA745 /* CalculatorBrain.swift */,
+				AF24FFE9267A0493007EA745 /* CalculatorModel.swift */,
+				AF21A5AD266F71DA00607FCA /* CalculatorButtonItem.swift */,
+				AF9E6CB32683583E008DA489 /* CalculatorView.swift */,
+			);
+			path = CalculatorVC;
+			sourceTree = "<group>";
+		};
+		AF9E6CB7268359D5008DA489 /* PokemonVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PokemonVC;
+			sourceTree = "<group>";
+		};
+		AF9E6CB8268359EF008DA489 /* SettingVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingVC;
+			sourceTree = "<group>";
+		};
+		AF9E6CB9268359FE008DA489 /* UserVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserVC;
+			sourceTree = "<group>";
+		};
+		AF9E6CBA26835A0F008DA489 /* MusicVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MusicVC;
+			sourceTree = "<group>";
+		};
+		EBF17D02A3CA42AF337D6C3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */,
+				CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */,
+				AF21A598266F4C8F00607FCA /* WidgetKit.framework */,
+				AF21A59A266F4C8F00607FCA /* SwiftUI.framework */,
+				A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,15 +345,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF21A587266F498300607FCA /* Build configuration list for PBXNativeTarget "LWMusic (iOS)" */;
 			buildPhases = (
+				9677FF3AE1189B79A78065EE /* [CP] Check Pods Manifest.lock */,
 				AF21A559266F498300607FCA /* Sources */,
 				AF21A55A266F498300607FCA /* Frameworks */,
 				AF21A55B266F498300607FCA /* Resources */,
+				AF21A5AB266F4C9000607FCA /* Embed App Extensions */,
+				ED1A1AA886E7472E58AA95BF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AF21A5A6266F4C9000607FCA /* PBXTargetDependency */,
 			);
 			name = "LWMusic (iOS)";
+			packageProductDependencies = (
+				AF9E6CAC26834121008DA489 /* Kingfisher */,
+			);
 			productName = "LWMusic (iOS)";
 			productReference = AF21A55D266F498300607FCA /* LWMusic.app */;
 			productType = "com.apple.product-type.application";
@@ -175,6 +369,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF21A58A266F498300607FCA /* Build configuration list for PBXNativeTarget "LWMusic (macOS)" */;
 			buildPhases = (
+				B33C3B7C5911DE365E68BC64 /* [CP] Check Pods Manifest.lock */,
 				AF21A561266F498300607FCA /* Sources */,
 				AF21A562266F498300607FCA /* Frameworks */,
 				AF21A563266F498300607FCA /* Resources */,
@@ -224,6 +419,24 @@
 			productReference = AF21A578266F498300607FCA /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		AF21A596266F4C8F00607FCA /* LWMusicWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF21A5A8266F4C9000607FCA /* Build configuration list for PBXNativeTarget "LWMusicWidgetExtension" */;
+			buildPhases = (
+				9EF080D5C1F7594F9F4D46DC /* [CP] Check Pods Manifest.lock */,
+				AF21A593266F4C8F00607FCA /* Sources */,
+				AF21A594266F4C8F00607FCA /* Frameworks */,
+				AF21A595266F4C8F00607FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LWMusicWidgetExtension;
+			productName = LWMusicWidgetExtension;
+			productReference = AF21A597266F4C8F00607FCA /* LWMusicWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,6 +460,9 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = AF21A564266F498300607FCA;
 					};
+					AF21A596266F4C8F00607FCA = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = AF21A554266F498100607FCA /* Build configuration list for PBXProject "LWMusic" */;
@@ -258,6 +474,9 @@
 				Base,
 			);
 			mainGroup = AF21A550266F498100607FCA;
+			packageReferences = (
+				AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = AF21A55E266F498300607FCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,6 +485,7 @@
 				AF21A564266F498300607FCA /* LWMusic (macOS) */,
 				AF21A56C266F498300607FCA /* Tests iOS */,
 				AF21A577266F498300607FCA /* Tests macOS */,
+				AF21A596266F4C8F00607FCA /* LWMusicWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -301,14 +521,113 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF21A595266F4C8F00607FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF21A5A1266F4C9000607FCA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9677FF3AE1189B79A78065EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LWMusic (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF080D5C1F7594F9F4D46DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LWMusicWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B33C3B7C5911DE365E68BC64 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LWMusic (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ED1A1AA886E7472E58AA95BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF21A559266F498300607FCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF21A5A4266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */,
+				AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */,
 				AF21A581266F498300607FCA /* ContentView.swift in Sources */,
+				AF21A5AE266F71DA00607FCA /* CalculatorButtonItem.swift in Sources */,
+				AF24FFEA267A0493007EA745 /* CalculatorModel.swift in Sources */,
+				AF24FFE72679FD18007EA745 /* CalculatorBrain.swift in Sources */,
 				AF21A57F266F498300607FCA /* LWMusicApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +657,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF21A593266F4C8F00607FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF21A59E266F4C8F00607FCA /* LWMusicWidget.swift in Sources */,
+				AF21A5A3266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -350,6 +678,11 @@
 			isa = PBXTargetDependency;
 			target = AF21A564266F498300607FCA /* LWMusic (macOS) */;
 			targetProxy = AF21A579266F498300607FCA /* PBXContainerItemProxy */;
+		};
+		AF21A5A6266F4C9000607FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF21A596266F4C8F00607FCA /* LWMusicWidgetExtension */;
+			targetProxy = AF21A5A5266F4C9000607FCA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,7 +800,9 @@
 		};
 		AF21A588266F498300607FCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA5EA5DA6D317C1F70E13E4F /* Pods-LWMusic (iOS).debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -489,7 +824,9 @@
 		};
 		AF21A589266F498300607FCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9991ACAA656266C235E034E0 /* Pods-LWMusic (iOS).release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -512,6 +849,7 @@
 		};
 		AF21A58B266F498300607FCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEC7543B27D4C14775F5D81D /* Pods-LWMusic (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -536,6 +874,7 @@
 		};
 		AF21A58C266F498300607FCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5361E6FCFA7F81646B811B3 /* Pods-LWMusic (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -647,6 +986,57 @@
 			};
 			name = Release;
 		};
+		AF21A5A9266F4C9000607FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B2DDDF91967977CBD063251 /* Pods-LWMusicWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LWMusicWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MKU6U4NGA4;
+				INFOPLIST_FILE = LWMusicWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kidea.lwmusic.LWMusic.LWMusicWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF21A5AA266F4C9000607FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34071A9A195BCCB09DC91B7B /* Pods-LWMusicWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = LWMusicWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MKU6U4NGA4;
+				INFOPLIST_FILE = LWMusicWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kidea.lwmusic.LWMusic.LWMusicWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -695,7 +1085,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AF21A5A8266F4C9000607FCA /* Build configuration list for PBXNativeTarget "LWMusicWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF21A5A9266F4C9000607FCA /* Debug */,
+				AF21A5AA266F4C9000607FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF9E6CAC26834121008DA489 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF21A551266F498100607FCA /* Project object */;
 }

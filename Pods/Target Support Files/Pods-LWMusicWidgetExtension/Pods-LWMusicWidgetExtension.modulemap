@@ -1,0 +1,6 @@
+framework module Pods_LWMusicWidgetExtension {
+  umbrella header "Pods-LWMusicWidgetExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
