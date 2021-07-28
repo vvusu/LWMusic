@@ -11,7 +11,8 @@ import SwiftUI
 struct LWMusicApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(CalculatorModel())
+//            ContentView().environmentObject(CalculatorModel())
+            MusicDetail()
         }
     }
 }
