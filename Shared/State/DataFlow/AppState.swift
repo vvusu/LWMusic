@@ -10,14 +10,13 @@ import Foundation
 import Combine
 
 struct AppState {
-    var pokemonList = MusicList()
+    var musicList = MusicList()
     var settings = Settings()
     var mainTab = MainTab()
 }
 
 extension AppState {
     struct Settings {
-
         enum Sorting: CaseIterable {
             case id, name, color, favorite
         }
@@ -33,7 +32,6 @@ extension AppState {
             @Published var verifyPassword = ""
 
             var isEmailValid: AnyPublisher<Bool, Never> {
-
                 let emailLocalValid = $email.map { $0.isValidEmailAddress }
                 let canSkipRemoteVerify = $accountBehavior.map { $0 == .login }
                 let remoteVerify = $email
@@ -79,107 +77,40 @@ extension AppState {
         }
 
         var checker = AccountChecker()
-
         var isValid: Bool = false
         var isEmailValid: Bool = false
-
         var showEnglishName = true
         var showFavoriteOnly = false
         var sorting = Sorting.id
-
         var registerRequesting = false
         var loginRequesting = false
-
         var showingAccountBehaviorIndicator: Bool { registerRequesting || loginRequesting }
 
-//        @FileStorage(directory: .documentDirectory, fileName: "user.json")
-//        var loginUser: User?
-
+        @FileStorage(directory: .documentDirectory, fileName: "user.json")
+        var loginUser: User?
         var loginError: AppError?
     }
 }
 
 extension AppState {
     struct MusicList {
-
-        struct SelectionState {
-            var expandingIndex: Int? = nil
-            var panelIndex: Int? = nil
-            var panelPresented = false
-            var radarProgress: Double = 0
-            var radarShouldAnimate = true
-
-            func isExpanding(_ id: Int) -> Bool {
-                expandingIndex == id
+        var loadingMusics = false
+        var musicLoadingError: AppError?
+        var musicList: [Int: MusicViewModel]?
+        
+        func displayMusic(with settings: Settings) -> [MusicViewModel] {
+            guard let musicList = musicList else {
+                return []
             }
+            let sortFunc: (MusicViewModel, MusicViewModel) -> Bool
+            switch settings.sorting {
+            case .id:
+                sortFunc = { $0.id < $1.id }
+            default:
+                sortFunc = { $0.id < $1.id }
+            }
+            return musicList.values.sorted(by: sortFunc);
         }
-
-        var loadingPokemons = false
-        var pokemonsLoadingError: AppError?
-
-        var selectionState = SelectionState()
-        var favoriteError: AppError?
-
-        var searchText = ""
-
-        var isSFViewActive = false
-
-//        func displayPokemons(with settings: Settings) -> [PokemonViewModel] {
-//
-//            func isFavorite(_ pokemon: PokemonViewModel) -> Bool {
-//                guard let user = settings.loginUser else { return false }
-//                return user.isFavoritePokemon(id: pokemon.id)
-//            }
-//
-//            func containsSearchText(_ pokemon: PokemonViewModel) -> Bool {
-//                guard !searchText.isEmpty else {
-//                    return true
-//                }
-//                return pokemon.name.contains(searchText) ||
-//                       pokemon.nameEN.lowercased().contains(searchText.lowercased())
-//            }
-//
-//            guard let pokemons = pokemons else {
-//                return []
-//            }
-//
-//            let sortFunc: (PokemonViewModel, PokemonViewModel) -> Bool
-//            switch settings.sorting {
-//            case .id:
-//                sortFunc = { $0.id < $1.id }
-//            case .name:
-//                sortFunc = { $0.nameEN < $1.nameEN }
-//            case .color:
-//                sortFunc = {
-//                    $0.species.color.name.rawValue < $1.species.color.name.rawValue
-//                }
-//            case .favorite:
-//                sortFunc = { p1, p2 in
-//                    switch (isFavorite(p1), isFavorite(p2)) {
-//                    case (true, true): return p1.id < p2.id
-//                    case (false, false): return p1.id < p2.id
-//                    case (true, false): return true
-//                    case (false, true): return false
-//                    }
-//                }
-//            }
-//
-//            var filterFuncs: [(PokemonViewModel) -> Bool] = []
-//            filterFuncs.append(containsSearchText)
-//            if settings.showFavoriteOnly {
-//                filterFuncs.append(isFavorite)
-//            }
-//
-//            let filterFunc = filterFuncs.reduce({ _ in true}) { r, next in
-//                return { pokemon in
-//                    r(pokemon) && next(pokemon)
-//                }
-//            }
-//
-//            return pokemons.values
-//                .filter(filterFunc)
-//                .sorted(by: sortFunc)
-//        }
     }
 }
 
@@ -188,7 +119,6 @@ extension AppState {
         enum Index: Hashable {
             case list, settings
         }
-
         var selection: Index = .list
     }
 }

@@ -13,8 +13,8 @@ enum AppError: Error, Identifiable {
     case alreadyRegistered
     case passwordWrong
     case requiresLogin
-    case networkingFailed(Error)
     case fileError
+    case networkingFailed(Error)
 }
 
 extension AppError: LocalizedError {

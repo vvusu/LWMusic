@@ -10,9 +10,7 @@ target 'LWMusic (iOS)' do
   use_frameworks!
 
   # Pods for LWMusic (iOS)
-  pod 'Alamofire'
-  pod 'ReachabilitySwift'
-  pod 'KeychainAccess'
+  
   share_pods
 end
 

@@ -8,32 +8,22 @@
 import SwiftUI
 
 struct MusicList: View {
-
     @EnvironmentObject var store: Store
-
-//    var pokemonList: AppState.MusicList { store.appState.musicList }
-//
+    var musicList: AppState.MusicList { store.appState.musicList }
+    
     var body: some View {
         ScrollView {
-//            LazyVStack {
-//                TextField("搜索", text: $store.appState.pokemonList.searchText.animation(nil))
-//                    .frame(height: 40)
-//                    .padding(.horizontal, 25)
-//                ForEach(pokemonList.displayPokemons(with: store.appState.settings)) { pokemon in
-//                    MusicRow(
-//                        model: pokemon,
-//                        expanded: self.pokemonList.selectionState.isExpanding(pokemon.id)
-//                    )
-//                    .onTapGesture {
-//                        withAnimation(.spring(response: 0.55, dampingFraction: 0.425, blendDuration: 0)) {
-//                            self.store.dispatch(.toggleListSelection(index: pokemon.id))
-//                        }
-//                        self.store.dispatch(.loadAbilities(pokemon: pokemon.pokemon))
-//                    }
-//                }
-//            }
-//            Spacer()
-//                .frame(height: 8)
+            TabView {
+                ForEach(musicList.displayMusic(with: store.appState.settings)) { model in
+                    MusicDetail(model:model)
+                    .onTapGesture {
+                    }
+                }
+            }
+            .background(Color.init(hex: 0x201717))
+            .tabViewStyle(PageTabViewStyle())
+            .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }

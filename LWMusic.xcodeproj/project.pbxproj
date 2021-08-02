@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		7D5C4FC010AE46EB90F11CFA /* Pods_LWMusic__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */; };
 		A5A04ED8133F9FD58E326A64 /* Pods_LWMusicWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */; };
+		AF11429926B840D500228BCE /* MusicMiddleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF11429826B840D500228BCE /* MusicMiddleWidget.swift */; };
+		AF11429B26B840EC00228BCE /* MusicBigWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF11429A26B840EC00228BCE /* MusicBigWidget.swift */; };
 		AF21A572266F498300607FCA /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A571266F498300607FCA /* Tests_iOS.swift */; };
 		AF21A57D266F498300607FCA /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A57C266F498300607FCA /* Tests_macOS.swift */; };
 		AF21A57F266F498300607FCA /* LWMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A556266F498100607FCA /* LWMusicApp.swift */; };
 		AF21A580266F498300607FCA /* LWMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A556266F498100607FCA /* LWMusicApp.swift */; };
-		AF21A581266F498300607FCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A557266F498100607FCA /* ContentView.swift */; };
-		AF21A582266F498300607FCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A557266F498100607FCA /* ContentView.swift */; };
+		AF21A581266F498300607FCA /* CalculatorRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A557266F498100607FCA /* CalculatorRootView.swift */; };
 		AF21A583266F498300607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A558266F498300607FCA /* Assets.xcassets */; };
 		AF21A584266F498300607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A558266F498300607FCA /* Assets.xcassets */; };
 		AF21A599266F4C8F00607FCA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF21A598266F4C8F00607FCA /* WidgetKit.framework */; };
@@ -29,7 +30,6 @@
 		AF24FFEA267A0493007EA745 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FFE9267A0493007EA745 /* CalculatorModel.swift */; };
 		AF2DE932269C90820099D94F /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE92F269C90820099D94F /* FileHelper.swift */; };
 		AF2DE933269C90820099D94F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE930269C90820099D94F /* Helpers.swift */; };
-		AF2DE934269C90820099D94F /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE931269C90820099D94F /* Sample.swift */; };
 		AF2DE943269C939C0099D94F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE936269C939B0099D94F /* AppState.swift */; };
 		AF2DE944269C939C0099D94F /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE937269C939B0099D94F /* AppCommand.swift */; };
 		AF2DE945269C939C0099D94F /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE938269C939B0099D94F /* AppError.swift */; };
@@ -38,16 +38,21 @@
 		AF2DE948269C939C0099D94F /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE93C269C939C0099D94F /* FileStorage.swift */; };
 		AF2DE949269C939C0099D94F /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE93E269C939C0099D94F /* LoginRequest.swift */; };
 		AF2DE94A269C939C0099D94F /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE93F269C939C0099D94F /* RegisterRequest.swift */; };
-		AF2DE94B269C939C0099D94F /* LoadAbilitiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE940269C939C0099D94F /* LoadAbilitiesRequest.swift */; };
-		AF2DE94C269C939C0099D94F /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE941269C939C0099D94F /* LoadPokemonRequest.swift */; };
+		AF2DE94C269C939C0099D94F /* LoadMusicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE941269C939C0099D94F /* LoadMusicRequest.swift */; };
 		AF2DE94D269C939C0099D94F /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE942269C939C0099D94F /* EmailCheckingRequest.swift */; };
-		AF2DE94F269C98580099D94F /* MusicRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE94E269C98580099D94F /* MusicRootView.swift */; };
 		AF2DE954269C993F0099D94F /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE951269C993F0099D94F /* BlurView.swift */; };
 		AF2DE955269C993F0099D94F /* OverlaySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE952269C993F0099D94F /* OverlaySheet.swift */; };
 		AF2DE956269C993F0099D94F /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE953269C993F0099D94F /* SafariView.swift */; };
 		AF2DE958269C9A920099D94F /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE957269C9A920099D94F /* MusicList.swift */; };
 		AF2DE95A269C9ABF0099D94F /* MusicDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2DE959269C9ABF0099D94F /* MusicDetail.swift */; };
 		AF5E21BF26A2C25700B97E75 /* Alfa Slab One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF5E21BE26A2C25700B97E75 /* Alfa Slab One.ttf */; };
+		AF6A9EC426B3DAB300B1AC3E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AF6A9EC326B3DAB300B1AC3E /* Alamofire */; };
+		AF6A9EC726B3DB7200B1AC3E /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = AF6A9EC626B3DB7200B1AC3E /* Reachability */; };
+		AF6A9ECA26B3DDE200B1AC3E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = AF6A9EC926B3DDE200B1AC3E /* KeychainAccess */; };
+		AF6A9ECD26B3EEB000B1AC3E /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = AF6A9ECC26B3EEB000B1AC3E /* SwiftyJSON */; };
+		AF6A9ECF26B5030100B1AC3E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A9ECE26B5030100B1AC3E /* User.swift */; };
+		AF6A9ED226B5055100B1AC3E /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A9ED126B5055100B1AC3E /* Music.swift */; };
+		AF6A9ED526B506F600B1AC3E /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6A9ED426B506F600B1AC3E /* MusicViewModel.swift */; };
 		AF9E6CAD26834121008DA489 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AF9E6CAC26834121008DA489 /* Kingfisher */; };
 		AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9E6CB32683583E008DA489 /* CalculatorView.swift */; };
 		E93F3BC5582836106D2DB3DB /* Pods_LWMusic__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */; };
@@ -97,8 +102,10 @@
 		8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9991ACAA656266C235E034E0 /* Pods-LWMusic (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).release.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusicWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF11429826B840D500228BCE /* MusicMiddleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMiddleWidget.swift; sourceTree = "<group>"; };
+		AF11429A26B840EC00228BCE /* MusicBigWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBigWidget.swift; sourceTree = "<group>"; };
 		AF21A556266F498100607FCA /* LWMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWMusicApp.swift; sourceTree = "<group>"; };
-		AF21A557266F498100607FCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF21A557266F498100607FCA /* CalculatorRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorRootView.swift; sourceTree = "<group>"; };
 		AF21A558266F498300607FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF21A55D266F498300607FCA /* LWMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LWMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF21A560266F498300607FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,7 +131,6 @@
 		AF24FFE9267A0493007EA745 /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 		AF2DE92F269C90820099D94F /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		AF2DE930269C90820099D94F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		AF2DE931269C90820099D94F /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		AF2DE936269C939B0099D94F /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		AF2DE937269C939B0099D94F /* AppCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		AF2DE938269C939B0099D94F /* AppError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
@@ -133,16 +139,17 @@
 		AF2DE93C269C939C0099D94F /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		AF2DE93E269C939C0099D94F /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		AF2DE93F269C939C0099D94F /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
-		AF2DE940269C939C0099D94F /* LoadAbilitiesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadAbilitiesRequest.swift; sourceTree = "<group>"; };
-		AF2DE941269C939C0099D94F /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
+		AF2DE941269C939C0099D94F /* LoadMusicRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMusicRequest.swift; sourceTree = "<group>"; };
 		AF2DE942269C939C0099D94F /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
-		AF2DE94E269C98580099D94F /* MusicRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRootView.swift; sourceTree = "<group>"; };
 		AF2DE951269C993F0099D94F /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		AF2DE952269C993F0099D94F /* OverlaySheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlaySheet.swift; sourceTree = "<group>"; };
 		AF2DE953269C993F0099D94F /* SafariView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		AF2DE957269C9A920099D94F /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		AF2DE959269C9ABF0099D94F /* MusicDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetail.swift; sourceTree = "<group>"; };
 		AF5E21BE26A2C25700B97E75 /* Alfa Slab One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alfa Slab One.ttf"; sourceTree = "<group>"; };
+		AF6A9ECE26B5030100B1AC3E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AF6A9ED126B5055100B1AC3E /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		AF6A9ED426B506F600B1AC3E /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
 		AF9E6CB32683583E008DA489 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		BA5EA5DA6D317C1F70E13E4F /* Pods-LWMusic (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).debug.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,8 +162,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6A9ECD26B3EEB000B1AC3E /* SwiftyJSON in Frameworks */,
+				AF6A9EC426B3DAB300B1AC3E /* Alamofire in Frameworks */,
+				AF6A9EC726B3DB7200B1AC3E /* Reachability in Frameworks */,
 				AF9E6CAD26834121008DA489 /* Kingfisher in Frameworks */,
 				7D5C4FC010AE46EB90F11CFA /* Pods_LWMusic__iOS_.framework in Frameworks */,
+				AF6A9ECA26B3DDE200B1AC3E /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,12 +239,11 @@
 			isa = PBXGroup;
 			children = (
 				AF5E21BD26A2C24700B97E75 /* Resource */,
+				AF9E6CB2268357FE008DA489 /* Utils */,
 				AF9E6CAE268357C0008DA489 /* State */,
 				AF9E6CB526835965008DA489 /* View */,
-				AF9E6CB2268357FE008DA489 /* Utils */,
-				AF9E6CB1268357ED008DA489 /* Json */,
+				AF6A9ED026B504AC00B1AC3E /* Model */,
 				AF21A556266F498100607FCA /* LWMusicApp.swift */,
-				AF21A557266F498100607FCA /* ContentView.swift */,
 				AF21A558266F498300607FCA /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -322,8 +332,7 @@
 			children = (
 				AF2DE93E269C939C0099D94F /* LoginRequest.swift */,
 				AF2DE93F269C939C0099D94F /* RegisterRequest.swift */,
-				AF2DE940269C939C0099D94F /* LoadAbilitiesRequest.swift */,
-				AF2DE941269C939C0099D94F /* LoadPokemonRequest.swift */,
+				AF2DE941269C939C0099D94F /* LoadMusicRequest.swift */,
 				AF2DE942269C939C0099D94F /* EmailCheckingRequest.swift */,
 			);
 			path = Networking;
@@ -347,6 +356,16 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		AF6A9ED026B504AC00B1AC3E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF6A9ECE26B5030100B1AC3E /* User.swift */,
+				AF6A9ED126B5055100B1AC3E /* Music.swift */,
+				AF6A9ED426B506F600B1AC3E /* MusicViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AF9E6CAE268357C0008DA489 /* State */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,19 +376,11 @@
 			path = State;
 			sourceTree = "<group>";
 		};
-		AF9E6CB1268357ED008DA489 /* Json */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Json;
-			sourceTree = "<group>";
-		};
 		AF9E6CB2268357FE008DA489 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				AF2DE92F269C90820099D94F /* FileHelper.swift */,
 				AF2DE930269C90820099D94F /* Helpers.swift */,
-				AF2DE931269C90820099D94F /* Sample.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -389,6 +400,7 @@
 		AF9E6CB626835993008DA489 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				AF21A557266F498100607FCA /* CalculatorRootView.swift */,
 				AF24FFE62679FD18007EA745 /* CalculatorBrain.swift */,
 				AF24FFE9267A0493007EA745 /* CalculatorModel.swift */,
 				AF21A5AD266F71DA00607FCA /* CalculatorButtonItem.swift */,
@@ -414,9 +426,10 @@
 		AF9E6CBA26835A0F008DA489 /* Music */ = {
 			isa = PBXGroup;
 			children = (
-				AF2DE94E269C98580099D94F /* MusicRootView.swift */,
 				AF2DE957269C9A920099D94F /* MusicList.swift */,
 				AF2DE959269C9ABF0099D94F /* MusicDetail.swift */,
+				AF11429826B840D500228BCE /* MusicMiddleWidget.swift */,
+				AF11429A26B840EC00228BCE /* MusicBigWidget.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -455,6 +468,10 @@
 			name = "LWMusic (iOS)";
 			packageProductDependencies = (
 				AF9E6CAC26834121008DA489 /* Kingfisher */,
+				AF6A9EC326B3DAB300B1AC3E /* Alamofire */,
+				AF6A9EC626B3DB7200B1AC3E /* Reachability */,
+				AF6A9EC926B3DDE200B1AC3E /* KeychainAccess */,
+				AF6A9ECC26B3EEB000B1AC3E /* SwiftyJSON */,
 			);
 			productName = "LWMusic (iOS)";
 			productReference = AF21A55D266F498300607FCA /* LWMusic.app */;
@@ -571,6 +588,10 @@
 			mainGroup = AF21A550266F498100607FCA;
 			packageReferences = (
 				AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				AF6A9EC226B3DAB300B1AC3E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AF6A9EC526B3DB7200B1AC3E /* XCRemoteSwiftPackageReference "Reachability" */,
+				AF6A9EC826B3DDE200B1AC3E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				AF6A9ECB26B3EEB000B1AC3E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = AF21A55E266F498300607FCA /* Products */;
 			projectDirPath = "";
@@ -725,25 +746,27 @@
 				AF2DE948269C939C0099D94F /* FileStorage.swift in Sources */,
 				AF21A5A4266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */,
 				AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */,
-				AF21A581266F498300607FCA /* ContentView.swift in Sources */,
+				AF21A581266F498300607FCA /* CalculatorRootView.swift in Sources */,
 				AF2DE955269C993F0099D94F /* OverlaySheet.swift in Sources */,
 				AF2DE932269C90820099D94F /* FileHelper.swift in Sources */,
 				AF2DE945269C939C0099D94F /* AppError.swift in Sources */,
 				AF2DE958269C9A920099D94F /* MusicList.swift in Sources */,
-				AF2DE94C269C939C0099D94F /* LoadPokemonRequest.swift in Sources */,
+				AF11429B26B840EC00228BCE /* MusicBigWidget.swift in Sources */,
+				AF2DE94C269C939C0099D94F /* LoadMusicRequest.swift in Sources */,
 				AF2DE933269C90820099D94F /* Helpers.swift in Sources */,
-				AF2DE934269C90820099D94F /* Sample.swift in Sources */,
+				AF6A9ED226B5055100B1AC3E /* Music.swift in Sources */,
 				AF2DE95A269C9ABF0099D94F /* MusicDetail.swift in Sources */,
-				AF2DE94F269C98580099D94F /* MusicRootView.swift in Sources */,
 				AF2DE946269C939C0099D94F /* AppAction.swift in Sources */,
 				AF2DE943269C939C0099D94F /* AppState.swift in Sources */,
+				AF6A9ED526B506F600B1AC3E /* MusicViewModel.swift in Sources */,
 				AF2DE944269C939C0099D94F /* AppCommand.swift in Sources */,
-				AF2DE94B269C939C0099D94F /* LoadAbilitiesRequest.swift in Sources */,
+				AF6A9ECF26B5030100B1AC3E /* User.swift in Sources */,
 				AF2DE956269C993F0099D94F /* SafariView.swift in Sources */,
 				AF21A5AE266F71DA00607FCA /* CalculatorButtonItem.swift in Sources */,
 				AF2DE94D269C939C0099D94F /* EmailCheckingRequest.swift in Sources */,
 				AF24FFEA267A0493007EA745 /* CalculatorModel.swift in Sources */,
 				AF24FFE72679FD18007EA745 /* CalculatorBrain.swift in Sources */,
+				AF11429926B840D500228BCE /* MusicMiddleWidget.swift in Sources */,
 				AF21A57F266F498300607FCA /* LWMusicApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -752,7 +775,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF21A582266F498300607FCA /* ContentView.swift in Sources */,
 				AF21A580266F498300607FCA /* LWMusicApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -970,6 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MKU6U4NGA4;
@@ -995,6 +1018,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MKU6U4NGA4;
@@ -1213,6 +1237,38 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF6A9EC226B3DAB300B1AC3E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		AF6A9EC526B3DB7200B1AC3E /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+		AF6A9EC826B3DDE200B1AC3E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.2;
+			};
+		};
+		AF6A9ECB26B3EEB000B1AC3E /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1224,6 +1280,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF6A9EC326B3DAB300B1AC3E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6A9EC226B3DAB300B1AC3E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		AF6A9EC626B3DB7200B1AC3E /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6A9EC526B3DB7200B1AC3E /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+		AF6A9EC926B3DDE200B1AC3E /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6A9EC826B3DDE200B1AC3E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		AF6A9ECC26B3EEB000B1AC3E /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6A9ECB26B3EEB000B1AC3E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		AF9E6CAC26834121008DA489 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF9E6CAB26834121008DA489 /* XCRemoteSwiftPackageReference "Kingfisher" */;

@@ -1,28 +1,16 @@
 PODS:
-  - Alamofire (5.4.3)
   - HandyJSON (5.0.2)
-  - KeychainAccess (4.2.2)
-  - ReachabilitySwift (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire
   - HandyJSON
-  - KeychainAccess
-  - ReachabilitySwift
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - HandyJSON
-    - KeychainAccess
-    - ReachabilitySwift
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
 
-PODFILE CHECKSUM: dc4e655fc467535fe9009e2f5d00123b36520a8c
+PODFILE CHECKSUM: e0bf5788f222b25fac05ca6a5ad14971f29208f7
 
 COCOAPODS: 1.10.1

@@ -10,9 +10,8 @@ import Combine
 
 class Store: ObservableObject {
     @Published var appState = AppState()
-
     private var disposeBag = Set<AnyCancellable>()
-
+    
     init() {
         setupObservers()
     }
@@ -21,7 +20,6 @@ class Store: ObservableObject {
         appState.settings.checker.isValid.sink { isValid in
             self.dispatch(.accountBehaviorButton(enabled: isValid))
         }.store(in: &disposeBag)
-
         appState.settings.checker.isEmailValid.sink { isValid in
             self.dispatch(.emailValid(valid: isValid))
         }.store(in: &disposeBag)
@@ -40,24 +38,42 @@ class Store: ObservableObject {
     static func reduce(state: AppState, action: AppAction) -> (AppState, AppCommand?) {
         var appState = state
         var appCommand: AppCommand? = nil
+        
+        switch action {
+        case .loadMusicList:
+            if appState.musicList.loadingMusics {
+                break
+            }
+            appState.musicList.musicLoadingError = nil
+            appState.musicList.loadingMusics = true
+            appCommand = LoadMusicListCommand()
 
-//        switch action {
-//        case .accountBehaviorButton(let isValid):
-//            appState.settings.isValid = isValid
-//
-//        case .emailValid(let isValid):
-//            appState.settings.isEmailValid = isValid
-//
-//        case .register(let email, let password):
-//            appState.settings.registerRequesting = true
-//            appCommand = RegisterAppCommand(email: email, password: password)
-//
-//        case .login(let email, let password):
-//            appState.settings.loginRequesting = true
-////            appCommand = LoginAppCommand(email: email, password: password)
-//
-//        return (appState, appCommand)
-//        }?
-        return (appState, nil);
+        case .loadMusicListDone(let result):
+            appState.musicList.loadingMusics = false
+            switch result {
+            case .success(let models):
+                appState.musicList.musicList =
+                    Dictionary(uniqueKeysWithValues: models.map { ($0.id, $0) })
+            case .failure(let error):
+                appState.musicList.musicLoadingError = error
+            }
+            
+        case .accountBehaviorButton(let isValid):
+            appState.settings.isValid = isValid
+
+        case .emailValid(let isValid):
+            appState.settings.isEmailValid = isValid
+
+        case .register(let email, let password):
+            appState.settings.registerRequesting = true
+            appCommand = RegisterAppCommand(email: email, password: password)
+
+        case .login(let email, let password):
+            appState.settings.loginRequesting = true
+            appCommand = LoginAppCommand(email: email, password: password)
+        default:
+            break
+        }
+        return (appState, appCommand)
     }
 }

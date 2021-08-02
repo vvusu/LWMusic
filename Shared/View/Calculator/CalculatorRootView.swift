@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CalculatorRootView: View {
     let scale: CGFloat = UIScreen.main.bounds.width / 414
     @EnvironmentObject var model: CalculatorModel
     @State private var editingHistory = false
@@ -34,10 +34,10 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView().environment(\.colorScheme, .dark).environmentObject(CalculatorModel())
+            CalculatorRootView().environment(\.colorScheme, .dark).environmentObject(CalculatorModel())
                 .previewDevice("iPhone 12 Pro Max")
-            ContentView().previewDevice("iPhone SE (2nd generation)").environmentObject(CalculatorModel())
-            ContentView().previewDevice("iPad Pro (12.9-inch) (5th generation)").environmentObject(CalculatorModel())
+            CalculatorRootView().previewDevice("iPhone SE (2nd generation)").environmentObject(CalculatorModel())
+            CalculatorRootView().previewDevice("iPad Pro (12.9-inch) (5th generation)").environmentObject(CalculatorModel())
         }
     }
 }
