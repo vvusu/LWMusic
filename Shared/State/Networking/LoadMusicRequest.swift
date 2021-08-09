@@ -15,9 +15,9 @@ struct LoadMusicRequest {
     
     func toViewModel(data: Data) -> [MusicViewModel] {
         var result:[MusicViewModel] = []
-        let item:MusicListModel = JSONDecoder.jsonDecoder(MusicListModel.self, from: data)!;
+        let item:MusicListModel = try! JSONDecoder().decode(MusicListModel.self, from: data);
         var num = 0;
-        for model in item.data! {
+        for model in item.data {
             var viewModel = MusicViewModel(music: model)
             viewModel.music.id = num;
             result.append(viewModel)

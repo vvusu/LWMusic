@@ -97,3 +97,9 @@ extension JSONDecoder {
         return jsonDecoder(type, from: jsonData);
     }
 }
+
+extension Font {
+    static func customAlfa(size:CGFloat) -> Font{
+        return Font.custom("Alfa Slab One", size: size)
+    }
+}

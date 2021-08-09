@@ -5,75 +5,85 @@
 //  Created by vvusu on 6/8/21.
 //
 
-import WidgetKit
 import SwiftUI
+import WidgetKit
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+    
+    func placeholder(in context: Context) -> WidgetEntry {
+        WidgetEntry(date: Date(), config: MusicWidgetConfig.createEmpty(name: ""))
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (WidgetEntry) -> ()) {
+        let entry = WidgetEntry(date: Date(), config: MusicWidgetConfig.createEmpty(name: ""))
         completion(entry)
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 60 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-            entries.append(entry)
+        let updateDate = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)
+        MusicWidgetRquest.request { (result) in
+            let model: MusicWidgetConfig
+            if case .success(let res ) = result {
+                model = res
+            } else {
+                model = MusicWidgetConfig.createEmpty(name: "")
+            }
+            let entry = WidgetEntry.init(date: updateDate!, config: model)
+            let timeLine = Timeline(entries: [entry], policy: .after(updateDate!))
+            completion(timeLine)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
-struct SimpleEntry: TimelineEntry {
+struct WidgetEntry: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+    let config: MusicWidgetConfig?
+    
+    init(date: Date, config: MusicWidgetConfig? = nil) {
+        self.date = date
+        self.config = config
+    }
 }
 
 struct LWMusicWidgetEntryView : View {
     var entry: Provider.Entry
-
+    //针对不同尺寸的 Widget 设置不同的 View
+    @Environment(\.widgetFamily) var family // 尺寸环境变量
+    
+    @ViewBuilder
     var body: some View {
-        ZStack {
-                Image("bg")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                Text(entry.date, style: .time)
-                        .font(.system(size: 25))
-                        .foregroundColor(.black)
-                        .padding(.top, 90)
+        switch family {
+        case .systemSmall:
+            MusicMiddleWidget(date: entry.date, config: entry.config!)
+        case .systemMedium:
+            MusicMiddleWidget(date: entry.date, config: entry.config!)
+        case .systemLarge:
+            MusicBigWidget(date: entry.date, config: entry.config!)
+        @unknown default:
+            MusicMiddleWidget(date: entry.date, config: entry.config!)
         }
     }
 }
 
 @main
 struct LWMusicWidget: Widget {
-    let kind: String = "LWMusicWidget"
+    let kind: String = "MusicWidget"
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             LWMusicWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("LW音乐")
-        .description("音乐时尚新闻")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName("音乐小组件")
+        .description("添加小组件来显示乐队信息")
+        .supportedFamilies([.systemMedium,.systemLarge])
     }
 }
 
 struct LWMusicWidget_Previews: PreviewProvider {
     static var previews: some View {
-        LWMusicWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        LWMusicWidgetEntryView(entry: WidgetEntry(date: Date())).previewContext(WidgetPreviewContext(family: .systemMedium))
+        LWMusicWidgetEntryView(entry: WidgetEntry(date: Date())).previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

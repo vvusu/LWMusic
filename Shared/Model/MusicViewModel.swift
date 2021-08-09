@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-struct MusicViewModel:Identifiable, Codable {
+struct MusicViewModel:Identifiable, Decodable {
     var music: Music
-    var id: Int { music.id! }
+    var id: Int { music.id }
     var titleColor = 0xCCCCCC;
     var contenColor = 0xB3B3B3;
 }
 
 extension MusicViewModel: CustomStringConvertible {
     var description: String {
-        "MusicViewModel - \(self.music.bandName!)"
+        "MusicViewModel - \(self.music.bandName)"
     }
 }
