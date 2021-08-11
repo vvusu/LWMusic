@@ -53,6 +53,8 @@ struct MusicWidgetRquest {
                                       albumPlace: album!.place,
                                       albumAppraise: album!.appraise,
                                       albumrPubdate: album!.pubdate,
+                                      recommendSong: album!.recommend.name,
+                                      recommendInfo: album!.recommend.info,
                                       recommendedDescriptionShort: data!.recommendedDescriptionShort)
     }
 }

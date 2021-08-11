@@ -61,6 +61,10 @@ extension Double: DefaultValue {
     static let defaultValue = 0.0
 }
 
+extension MusicSong: DefaultValue {
+    static let defaultValue = MusicSong(name: "", info: "")
+}
+
 // DecodableDefault
 
 enum DecodableDefault {}

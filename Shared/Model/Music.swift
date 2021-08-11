@@ -18,33 +18,6 @@ struct Music: Decodable {
     @Default<String> var bandSmallCover: String
     @Default<String> var recommendedDescriptionShort: String
     var albums:[MusicAlbum] = []
-
-//    // 手动对应key
-//    enum MusicKeys: String, CodingKey {
-//        case id = "id"
-//        case showDate = "showDate"
-//        case bandName = "bandName"
-//        case bandInfo = "bandInfo"
-//        case bandBigCover = "bandBigCover"
-//        case bandShortInfo = "bandShortInfo"
-//        case bandSmallCover = "bandSmallCover"
-//        case recommendedDescriptionShort = "recommendedDescriptionShort"
-//        case albums = "albums"
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let value = try? decoder.container(keyedBy: MusicKeys.self);
-//        id = (try? value?.decode(Int.self, forKey: .id)) ?? 1;
-//        showDate = (try? value?.decode(Int.self, forKey: .showDate)) ?? 0;
-//        bandName = (try? value?.decode(String.self, forKey: .bandName)) ?? "";
-//        bandInfo = (try? value?.decode(String.self, forKey: .bandInfo)) ?? "";
-//        bandBigCover = (try? value?.decode(String.self, forKey: .bandBigCover)) ?? "";
-//        bandShortInfo = (try? value?.decode(String.self, forKey: .bandShortInfo)) ?? "";
-//        bandSmallCover = (try? value?.decode(String.self, forKey: .bandSmallCover)) ?? "";
-//        recommendedDescriptionShort = (try? value?.decode(String.self, forKey: .recommendedDescriptionShort)) ?? "";
-//        albums = (try? value?.decode([MusicAlbum].self, forKey: .albums)) ?? [];
-//    }
-//
 }
 
 extension Music: Identifiable { }
@@ -81,9 +54,7 @@ struct MusicAlbum: Decodable {
     @Default<String> var smallCover: String
     @Default<String> var description: String
     @Default<String> var descriptionSource: String
-    let recommend:MusicSong?;
-    
-    
+    @Default<MusicSong> var recommend:MusicSong;
 }
 
 extension MusicAlbum: CustomDebugStringConvertible {

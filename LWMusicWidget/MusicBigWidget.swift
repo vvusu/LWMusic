@@ -56,7 +56,7 @@ struct MusicBigWidget: MusicWidget, View {
                         Spacer()
                         HStack {
                             VStack(alignment: .leading) {
-                                Text(model.bandName)
+                                Text(model.recommendSong)
                                     .font(.customAlfa(size: 26))
                                     .lineLimit(1)
                                     .foregroundColor(.white)
@@ -65,7 +65,7 @@ struct MusicBigWidget: MusicWidget, View {
                                     .padding(.top,0)
                                     .lineLimit(1)
                                     .foregroundColor(Color.init(hex:titleColor))
-                                Text(model.bandInfo)
+                                Text(model.recommendedDescriptionShort)
                                     .font(.customAlfa(size: 12))
                                     .padding(.top,2)
                                     .lineLimit(1)
@@ -91,7 +91,7 @@ struct MusicBigWidget: MusicWidget, View {
                             .font(.customAlfa(size: 12))
                             .lineLimit(1)
                             .foregroundColor(.white)
-                        Text("2009／\(model.albumPlace)／\(model.albumName)")
+                        Text("\(String.timeStampToString(timeStamp: model.albumrPubdate,dateFormat: "yyyy"))／\(model.albumPlace)／\(model.albumName)")
                             .font(.customAlfa(size: 9))
                             .padding(.top,2)
                             .lineLimit(1)
@@ -115,13 +115,15 @@ struct MusicBigWidget: MusicWidget, View {
                         HStack(alignment: .center) {
                             Text(String.covertMMDate(timeStamp: model.showDate))
                                 .font(.customAlfa(size: 9))
+                                .padding(.trailing, -5)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.trailing)
                             Text("|")
                                 .font(.customAlfa(size: 9))
                                 .foregroundColor(.white)
                             Text(String.timeStampToWeekday(timeStamp: model.showDate))
-                                .font(.system(size: 9))
+                                .font(.customAlfa(size: 9))
+                                .padding(.leading, -5)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
                         

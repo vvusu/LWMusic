@@ -24,6 +24,8 @@ struct StorableMusicConfig: Codable {
     var albumPlace: String
     var albumAppraise: String
     var albumrPubdate: Double
+    var recommendSong: String
+    var recommendInfo: String
     var recommendedDescriptionShort: String
 }
 
@@ -44,6 +46,8 @@ struct MusicWidgetConfig {
     var albumPlace: String
     var albumAppraise: String
     var albumrPubdate: Double
+    var recommendSong: String
+    var recommendInfo: String
     var recommendedDescriptionShort: String
     
     init(
@@ -60,6 +64,8 @@ struct MusicWidgetConfig {
         albumPlace: String,
         albumAppraise: String,
         albumrPubdate: Double,
+        recommendSong: String,
+        recommendInfo: String,
         recommendedDescriptionShort: String
     ) {
         self.showDate = showDate
@@ -75,6 +81,8 @@ struct MusicWidgetConfig {
         self.albumPlace = albumPlace
         self.albumrPubdate = albumrPubdate
         self.albumAppraise = albumAppraise
+        self.recommendSong = recommendSong
+        self.recommendInfo = recommendInfo
     }
 
     // 通过StorableClockConfig来初始化
@@ -107,7 +115,9 @@ struct MusicWidgetConfig {
             albumPlace: config.albumPlace,
             albumAppraise: config.albumAppraise,
             albumrPubdate: config.albumrPubdate,
-            recommendedDescriptionShort: config.recommendedDescriptionShort
+            recommendSong: config.recommendedDescriptionShort,
+            recommendInfo: config.recommendSong,
+            recommendedDescriptionShort: config.recommendInfo
         )
     }
     
@@ -125,6 +135,9 @@ struct MusicWidgetConfig {
                                                             albumPlace: "英国",
                                                             albumAppraise: "🗿🗿🗿🗿",
                                                             albumrPubdate: 1628423914,
-                                                            recommendedDescriptionShort: "也就是在那儿，Fela 找到了属於自己独有的音乐节奏 : Afro-Beat，特殊的非洲节奏成为 Fela 的招牌，歌中他发展了黑人文化和非洲文化，鼓吹子民回归传统非洲文化的论调在当时备受瞩目，他在当地发行几张单曲有不错的迴响。成为 Fela 的招牌。"))
+                                                            recommendSong: "Light in the Dark",
+                                                            recommendInfo: "温柔温柔的夏夜 去听一首",
+                                                            recommendedDescriptionShort: "歌中他发展了人文文化。"
+                                                            ))
     }
 }

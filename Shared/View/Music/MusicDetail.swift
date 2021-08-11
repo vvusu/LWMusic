@@ -79,7 +79,7 @@ struct MusicDetail: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, height: 20)
-                            Text(String.timeStampToString(timeStamp: model.music.showDate ,dateFormat: "yyyy/MM"))
+                            Text(String.timeStampToString(timeStamp: model.music.showDate ,dateFormat: "yyyy"))
                                 .font(.customAlfa(size: 10))
                                 .fontWeight(.black)
                                 .foregroundColor(Color.init(hex: model.titleColor))
@@ -191,7 +191,7 @@ struct MusicDetail: View {
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 22, height: 24, alignment: .leading)
                                 
-                                Text("Elephant Walk")
+                                Text(model.music.albums.first?.recommend.name ?? "")
                                     .font(.customAlfa(size: 12))
                                     .fontWeight(.black)
                                     .padding(.leading, 10)
