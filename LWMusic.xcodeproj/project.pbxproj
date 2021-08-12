@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D5C4FC010AE46EB90F11CFA /* Pods_LWMusic__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */; };
 		A5A04ED8133F9FD58E326A64 /* Pods_LWMusicWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */; };
+		AF01D33526C514420013B1A0 /* LWMusicWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF01D33426C514420013B1A0 /* LWMusicWidget.intentdefinition */; };
 		AF11429926B840D500228BCE /* MusicMiddleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF11429826B840D500228BCE /* MusicMiddleWidget.swift */; };
 		AF11429B26B840EC00228BCE /* MusicBigWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF11429A26B840EC00228BCE /* MusicBigWidget.swift */; };
 		AF21A572266F498300607FCA /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A571266F498300607FCA /* Tests_iOS.swift */; };
@@ -22,8 +23,6 @@
 		AF21A59B266F4C8F00607FCA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF21A59A266F4C8F00607FCA /* SwiftUI.framework */; };
 		AF21A59E266F4C8F00607FCA /* LWMusicWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */; };
 		AF21A5A1266F4C9000607FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A5A0266F4C9000607FCA /* Assets.xcassets */; };
-		AF21A5A3266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */; };
-		AF21A5A4266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */; };
 		AF21A5A7266F4C9000607FCA /* LWMusicWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AF21A597266F4C8F00607FCA /* LWMusicWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AF21A5AE266F71DA00607FCA /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF21A5AD266F71DA00607FCA /* CalculatorButtonItem.swift */; };
 		AF24FFE72679FD18007EA745 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FFE62679FD18007EA745 /* CalculatorBrain.swift */; };
@@ -140,6 +139,7 @@
 		8DB6905EAE5266643B6F4661 /* Pods_LWMusic__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9991ACAA656266C235E034E0 /* Pods-LWMusic (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).release.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		A8EAED82836DB58FC3D8A6DD /* Pods_LWMusicWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusicWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF01D33426C514420013B1A0 /* LWMusicWidget.intentdefinition */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.intentdefinition; path = LWMusicWidget.intentdefinition; sourceTree = "<group>"; };
 		AF11429826B840D500228BCE /* MusicMiddleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicMiddleWidget.swift; sourceTree = "<group>"; };
 		AF11429A26B840EC00228BCE /* MusicBigWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicBigWidget.swift; sourceTree = "<group>"; };
 		AF21A556266F498100607FCA /* LWMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWMusicApp.swift; sourceTree = "<group>"; };
@@ -160,7 +160,6 @@
 		AF21A598266F4C8F00607FCA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AF21A59A266F4C8F00607FCA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LWMusicWidget.swift; sourceTree = "<group>"; };
-		AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = LWMusicWidget.intentdefinition; sourceTree = "<group>"; };
 		AF21A5A0266F4C9000607FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF21A5A2266F4C9000607FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF21A5AC266F685300607FCA /* LWMusicWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LWMusicWidgetExtension.entitlements; sourceTree = "<group>"; };
@@ -353,7 +352,7 @@
 				AF11429826B840D500228BCE /* MusicMiddleWidget.swift */,
 				AF11429A26B840EC00228BCE /* MusicBigWidget.swift */,
 				AF21A59D266F4C8F00607FCA /* LWMusicWidget.swift */,
-				AF21A59F266F4C8F00607FCA /* LWMusicWidget.intentdefinition */,
+				AF01D33426C514420013B1A0 /* LWMusicWidget.intentdefinition */,
 				AF21A5A0266F4C9000607FCA /* Assets.xcassets */,
 				AF21A5A2266F4C9000607FCA /* Info.plist */,
 			);
@@ -806,7 +805,6 @@
 				AF2DE954269C993F0099D94F /* BlurView.swift in Sources */,
 				AF2DE94A269C939C0099D94F /* RegisterRequest.swift in Sources */,
 				AF2DE948269C939C0099D94F /* FileStorage.swift in Sources */,
-				AF21A5A4266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */,
 				AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */,
 				AF7F4BBC26BAF15100B2D74E /* ImagePicker.swift in Sources */,
 				AF7F4BB026BAE4A000B2D74E /* MusicWidgetConfig.swift in Sources */,
@@ -879,7 +877,6 @@
 				AF7F4BB126BAE4A000B2D74E /* MusicWidgetConfig.swift in Sources */,
 				AF7F4BA126B9308500B2D74E /* DateHelper.swift in Sources */,
 				AF7F4BAE26BAE42300B2D74E /* MusicWidget.swift in Sources */,
-				AF21A5A3266F4C9000607FCA /* LWMusicWidget.intentdefinition in Sources */,
 				AF7F4BAA26B99DF300B2D74E /* DefaultDataHelper.swift in Sources */,
 				AF7F4B9D26B926F400B2D74E /* MusicBigWidget.swift in Sources */,
 				AF7F4BB426BAE5BC00B2D74E /* ColorHelper.swift in Sources */,
@@ -895,6 +892,7 @@
 				AF7F4B9026B9230E00B2D74E /* Music.swift in Sources */,
 				AF7F4BA426B98B1B00B2D74E /* DecoderHelper.swift in Sources */,
 				AF7F4B8826B922D800B2D74E /* FileHelper.swift in Sources */,
+				AF01D33526C514420013B1A0 /* LWMusicWidget.intentdefinition in Sources */,
 				AFBA379126C1742800A2B853 /* PoetryRequest.swift in Sources */,
 				AF7F4B9E26B926F600B2D74E /* MusicMiddleWidget.swift in Sources */,
 				AF7F4B8F26B9230B00B2D74E /* User.swift in Sources */,
@@ -1045,19 +1043,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U5CRVTSH35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quzuoke.music;
 				PRODUCT_NAME = LWMusic;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = zuokemusic_dev;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1071,19 +1069,19 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U5CRVTSH35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quzuoke.music;
 				PRODUCT_NAME = LWMusic;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = zuokemusic_dev;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1239,10 +1237,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = LWMusicWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U5CRVTSH35;
 				INFOPLIST_FILE = LWMusicWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1250,6 +1249,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quzuoke.music.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = zuokemusic_widget_dev;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -1264,10 +1264,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = LWMusicWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = U5CRVTSH35;
 				INFOPLIST_FILE = LWMusicWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1275,6 +1276,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quzuoke.music.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = zuokemusic_widget_dev;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

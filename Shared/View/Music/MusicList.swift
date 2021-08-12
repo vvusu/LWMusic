@@ -21,7 +21,7 @@ struct MusicList: View {
                 }
             }
             .background(Color.init(hex: 0x201717))
-            .tabViewStyle(PageTabViewStyle())
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height)
         }
         .edgesIgnoringSafeArea(.all)

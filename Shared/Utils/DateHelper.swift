@@ -34,7 +34,7 @@ extension String {
     }
     
     static func covertMMDate(timeStamp:Double) -> String {
-        let number = Int(timeStampToString(timeStamp: timeStamp/1000,dateFormat:"MM"))!
+        let number = Int(timeStampToString(timeStamp: timeStamp,dateFormat:"MM"))!
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale(identifier: "zh_CN")
         numberFormatter.numberStyle = NumberFormatter.Style.spellOut

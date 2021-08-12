@@ -37,7 +37,7 @@ struct MusicBigWidget: MusicWidget, View {
                 ZStack() {
                     Image(uiImage: model.bandBigCoverImg!)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .scaledToFill()
                         .frame(height: geo.size.height * 238/344)
                         .position(x: geo.size.width/2, y: geo.size.height * 238/344 / 2)
                         .cornerRadius(4)
@@ -48,7 +48,7 @@ struct MusicBigWidget: MusicWidget, View {
                     
                     Image("music_logo")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .scaledToFill()
                         .frame(width: 22, height: 22, alignment: .leading)
                         .position(x: geo.size.width - 22, y: 22/2 + 18)
                     
@@ -68,7 +68,7 @@ struct MusicBigWidget: MusicWidget, View {
                                 Text(model.recommendedDescriptionShort)
                                     .font(.customAlfa(size: 12))
                                     .padding(.top,2)
-                                    .lineLimit(1)
+                                    .lineLimit(2)
                                     .foregroundColor(Color.init(hex: contenColor))
                             }
                             Spacer()
@@ -91,7 +91,7 @@ struct MusicBigWidget: MusicWidget, View {
                             .font(.customAlfa(size: 12))
                             .lineLimit(1)
                             .foregroundColor(.white)
-                        Text("\(String.timeStampToString(timeStamp: model.albumrPubdate,dateFormat: "yyyy"))／\(model.albumPlace)／\(model.albumName)")
+                        Text("\(String.timeStampToString(timeStamp: model.albumrPubdate,dateFormat: "yyyy"))／\(model.albumPlace)／\(model.albumStyle)")
                             .font(.customAlfa(size: 9))
                             .padding(.top,2)
                             .lineLimit(1)

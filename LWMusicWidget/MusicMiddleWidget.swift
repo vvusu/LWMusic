@@ -27,7 +27,7 @@ struct MusicMiddleWidget: MusicWidget, View {
                 ZStack {
                     Image(uiImage: model.albumCoverImg!)
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .scaledToFill()
                         .frame(width:116, height: 116)
                         .cornerRadius(4)
                 }
@@ -53,14 +53,14 @@ struct MusicMiddleWidget: MusicWidget, View {
                     Spacer()
                     HStack {
                         VStack(alignment: .leading) {
-                            Text(model.bandName)
+                            Text(model.recommendSong)
                                 .font(.customAlfa(size: 14))
                                 .lineLimit(1)
                                 .foregroundColor(.white)
-                            Text(model.bandInfo)
+                            Text(model.recommendedDescriptionShort)
                                 .font(.customAlfa(size: 12))
                                 .padding(.top,10)
-                                .lineLimit(1)
+                                .lineLimit(2)
                                 .foregroundColor(Color.init(hex: contenColor))
                         }
                         Spacer()

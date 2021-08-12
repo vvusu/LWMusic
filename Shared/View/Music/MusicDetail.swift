@@ -16,24 +16,49 @@ struct MusicDetail: View {
 
     @State private var mosaicArrowDim = false
     
+    private func getScrollOffset(_ geometry: GeometryProxy) -> CGFloat {
+        geometry.frame(in: .global).minY
+    }
+    
+    private func getOffsetForHeaderImage(_ geometry: GeometryProxy) -> CGFloat {
+        let offset = getScrollOffset(geometry)
+        if offset > 0 {
+            return -offset
+        }
+        return 0
+    }
+    
+    private func getHeightForHeaderImage(_ geometry: GeometryProxy) -> CGFloat {
+        let offset = getScrollOffset(geometry)
+        let imageHeight = geometry.size.height
+        if offset > 0 {
+            return imageHeight + offset
+        }
+        return imageHeight
+    }
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                ZStack(alignment: .bottom) {
-                    KFImage(URL.init(string: model.music.bandBigCover))
-                        .placeholder({
-                            Image(systemName: "band_cover1")
-                        })
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: screenW*(300/375))
-                    HStack{
-                        Spacer()
-                    }
-                    .frame(height: 100)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: [Color.init(hex: 0x000000, alpha: 0), Color.init(hex: 0x231717,alpha: 0.97)]), startPoint: .top, endPoint: .bottom))
-                }
+                GeometryReader { geometry in
+                    ZStack(alignment: .bottom) {
+                        KFImage(URL.init(string: model.music.bandBigCover))
+                            .placeholder({
+                                Image(systemName: "band_cover1")
+                            })
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: geometry.size.width, height: self.getHeightForHeaderImage(geometry))
+                            .clipped()
+                        HStack{
+                            Spacer()
+                        }
+                        .frame(height: 100)
+                        .background(
+                            LinearGradient(gradient: Gradient(colors: [Color.init(hex: 0x000000, alpha: 0), Color.init(hex: 0x231717,alpha: 0.97)]), startPoint: .top, endPoint: .bottom))
+                    }.offset(x: 0, y: self.getOffsetForHeaderImage(geometry))
+                    
+                }.frame(height: screenW*(300/375))
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .center) {
@@ -81,14 +106,13 @@ struct MusicDetail: View {
                                 .frame(width: 100, height: 20)
                             Text(String.timeStampToString(timeStamp: model.music.showDate ,dateFormat: "yyyy"))
                                 .font(.customAlfa(size: 10))
-                                .fontWeight(.black)
                                 .foregroundColor(Color.init(hex: model.titleColor))
                         }
                         .padding(.trailing,-10)
                         Spacer()
                     }
                 }
-                .frame(idealHeight: 120)
+                .frame(height: 120)
                 .fixedSize(horizontal: false, vertical: true)
                 .padding(.top, 10)
                 .padding(.leading,30)
@@ -106,9 +130,7 @@ struct MusicDetail: View {
                             .lineSpacing(8)
                             .foregroundColor(Color.init(hex: model.contenColor))
                     }
-                    .padding(.leading,30)
-                    .padding(.trailing,30)
-                    .padding(.bottom,40)
+                    .padding(.init(top: 0, leading: 30, bottom: 40, trailing: 30))
                     Spacer()
                 }
     
@@ -136,11 +158,13 @@ struct MusicDetail: View {
                         Text(model.music.albums.first?.name ?? "")
                             .font(.customAlfa(size: 14))
                             .foregroundColor(.white)
+                        
                         Text("\(String.timeStampToString(timeStamp: model.music.albums.first?.pubdate ?? 1628423914,dateFormat: "yyyy"))／\(model.music.albums.first?.place ?? "")／\(model.music.albums.first?.style ?? "")")
                             .font(.customAlfa(size: 10))
                             .padding(.top,5)
-                            .lineLimit(1)
+                            .lineLimit(2)
                             .foregroundColor(Color.init(hex: model.contenColor))
+                        
                         Text(model.music.albums.first?.appraise ?? "")
                             .font(.customAlfa(size: 10))
                             .fontWeight(.black)
@@ -152,7 +176,7 @@ struct MusicDetail: View {
                 }
                 .padding(.leading,30)
                 .padding(.trailing,30)
-                .frame(idealHeight: 100)
+                .frame(height: 100)
                 .fixedSize(horizontal: false, vertical: true)
                 
                 VStack(alignment: .leading) {
@@ -160,30 +184,31 @@ struct MusicDetail: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 25, height: 20, alignment: .leading)
-                        .padding(.bottom,20)
                     
                     Text(model.music.albums.first?.description ?? "")
                         .font(.customAlfa(size: 12))
                         .lineSpacing(8)
+                        .padding(.top,20)
                         .foregroundColor(Color.init(hex: model.contenColor))
+                        .fixedSize(horizontal: false, vertical: true)
                     
-                    HStack {
+                    HStack(alignment: .top) {
                         Text("—")
                             .font(.customAlfa(size: 12))
                             .fontWeight(.black)
                             .foregroundColor(Color.init(hex: 0x808080))
                         Text(model.music.albums.first?.author ?? "")
                             .font(.customAlfa(size: 12))
-                            .fontWeight(.black)
+                            .lineLimit(3)
                             .foregroundColor(Color.init(hex: model.titleColor))
+                            .fixedSize(horizontal: false, vertical: true)
                     }
-                    .padding(.top,20)
-                    .padding(.bottom,40)
+                    .padding(.init(top: 20, leading: 0, bottom: 0, trailing: 0))
                     
                     ZStack(alignment: .leading) {
                         Button(action: {
                             print("点击来")
-                            UIPasteboard.general.setValue("Hello,World!", forPasteboardType: kUTTypePlainText as String)
+                            UIPasteboard.general.setValue(model.music.albums.first?.recommend.name ?? "", forPasteboardType: kUTTypePlainText as String)
                         }){
                             HStack {
                                 Image("music_share_copy")
@@ -204,7 +229,7 @@ struct MusicDetail: View {
                         .background(Color.init(hex: 0x2F2121))
                         .cornerRadius(20)
                     }
-                    .frame(height: 40)
+                    .padding(.top, 40)
                     
                     HStack {
                         Image("music_logo")
@@ -214,8 +239,7 @@ struct MusicDetail: View {
                         
                         Spacer()
                         Text("zuokeinc@163.com")
-                            .font(.system(size: 10))
-                            .fontWeight(.black)
+                            .font(.customAlfa(size: 10))
                             .foregroundColor(Color.init(hex: model.contenColor))
                         
                         Spacer()
@@ -228,12 +252,9 @@ struct MusicDetail: View {
                                 .frame(width: 40, height: 40, alignment: .leading)
                         }
                     }
-                    .padding(.top,60)
-                    .padding(.bottom,30)
+                    .padding(.top, 60)
                 }
-                .padding(.top,50)
-                .padding(.leading,30)
-                .padding(.trailing,30)
+                .padding(.init(top: 50, leading: 30, bottom: 30, trailing: 30))
             }
         }
         .frame(width: screenW)
