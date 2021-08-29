@@ -52,8 +52,11 @@ class Store: ObservableObject {
             appState.musicList.loadingMusics = false
             switch result {
             case .success(let models):
-                appState.musicList.musicList =
-                    Dictionary(uniqueKeysWithValues: models.map { ($0.id, $0) })
+                if appState.musicList.loadmore {
+                    appState.musicList.dataList.append(contentsOf: models)
+                } else {
+                    appState.musicList.dataList = models
+                }
             case .failure(let error):
                 appState.musicList.musicLoadingError = error
             }

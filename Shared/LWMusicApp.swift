@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-@main
+//@main
 struct LWMusicApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let store = Store()
+    
     var body: some Scene {
         WindowGroup {
             MusicList().environmentObject(store)

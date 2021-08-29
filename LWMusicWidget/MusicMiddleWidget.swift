@@ -34,31 +34,32 @@ struct MusicMiddleWidget: MusicWidget, View {
                 VStack {
                     HStack {
                         Text(String.timeStampToString(timeStamp: model.showDate,dateFormat: "dd"))
-                            .font(.customAlfa(size: 30))
+                            .font(.system(size: 30))
+                            .bold()
                             .foregroundColor(.white)
                         VStack {
                             Text(String.covertMMDate(timeStamp: model.showDate))
-                                .font(.customAlfa(size: 9))
+                                .font(.system(size: 9))
                                 .foregroundColor(.white)
                             Text(String.timeStampToWeekday(timeStamp: model.showDate))
-                                .font(.customAlfa(size: 9))
+                                .font(.system(size: 9))
                                 .foregroundColor(.white)
                         }
                         Spacer()
-                        Image("music_logo")
+                        Image("music_card_logo")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 22, height: 22, alignment: .leading)
+                            .frame(width: 20, height: 28, alignment: .leading)
                     }
                     Spacer()
                     HStack {
                         VStack(alignment: .leading) {
                             Text(model.recommendSong)
-                                .font(.customAlfa(size: 14))
+                                .font(.system(size: 14))
                                 .lineLimit(1)
                                 .foregroundColor(.white)
-                            Text(model.recommendedDescriptionShort)
-                                .font(.customAlfa(size: 12))
+                            Text("\"\(model.recommendedDescriptionShort)\"")
+                                .font(.system(size: 12))
                                 .padding(.top,10)
                                 .lineLimit(2)
                                 .foregroundColor(Color.init(hex: contenColor))
@@ -72,6 +73,7 @@ struct MusicMiddleWidget: MusicWidget, View {
             .frame(width: geo.size.width, height: geo.size.height)
             .background(Color.init(hex: 0x201717))
         }
+        .widgetURL(URL(string: "quzuoke://musiclist?index=0"))
     }
 }
 

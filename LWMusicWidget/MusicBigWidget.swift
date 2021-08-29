@@ -46,10 +46,10 @@ struct MusicBigWidget: MusicWidget, View {
                         .frame(width:geo.size.width, height: geo.size.height * 200/344)
                         .position(x: geo.size.width/2, y: geo.size.height * 200/344/2 + (geo.size.height * 238/344 - geo.size.height * 200/344))
                     
-                    Image("music_logo")
+                    Image("music_card_logo")
                         .resizable()
                         .scaledToFill()
-                        .frame(width: 22, height: 22, alignment: .leading)
+                        .frame(width: 20, height: 28, alignment: .leading)
                         .position(x: geo.size.width - 22, y: 22/2 + 18)
                     
                     VStack {
@@ -57,16 +57,16 @@ struct MusicBigWidget: MusicWidget, View {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(model.recommendSong)
-                                    .font(.customAlfa(size: 26))
+                                    .font(.system(size: 26))
                                     .lineLimit(1)
                                     .foregroundColor(.white)
                                 Text("- \(model.albumAuthor)")
-                                    .font(.customAlfa(size: 9))
+                                    .font(.system(size: 9))
                                     .padding(.top,0)
                                     .lineLimit(1)
                                     .foregroundColor(Color.init(hex:titleColor))
-                                Text(model.recommendedDescriptionShort)
-                                    .font(.customAlfa(size: 12))
+                                Text("\"\(model.recommendedDescriptionShort)\"")
+                                    .font(.system(size: 12))
                                     .padding(.top,2)
                                     .lineLimit(2)
                                     .foregroundColor(Color.init(hex: contenColor))
@@ -88,16 +88,16 @@ struct MusicBigWidget: MusicWidget, View {
                     
                     VStack(alignment: .leading) {
                         Text(model.albumName)
-                            .font(.customAlfa(size: 12))
+                            .font(.system(size: 12))
                             .lineLimit(1)
                             .foregroundColor(.white)
                         Text("\(String.timeStampToString(timeStamp: model.albumrPubdate,dateFormat: "yyyy"))／\(model.albumPlace)／\(model.albumStyle)")
-                            .font(.customAlfa(size: 9))
+                            .font(.system(size: 9))
                             .padding(.top,2)
                             .lineLimit(1)
                             .foregroundColor(Color.init(hex: contenColor))
                         Text(model.albumAppraise)
-                            .font(.customAlfa(size: 9))
+                            .font(.system(size: 9))
                             .padding(.top,2)
                             .lineLimit(1)
                             .foregroundColor(Color.init(hex: contenColor))
@@ -108,25 +108,25 @@ struct MusicBigWidget: MusicWidget, View {
                     
                     VStack() {
                         Text(String.timeStampToString(timeStamp: model.showDate,dateFormat: "dd"))
-                            .font(.customAlfa(size: 38))
+                            .font(.system(size: 38))
+                            .bold()
                             .foregroundColor(.white)
                             .padding(.top, -5)
                         
                         HStack(alignment: .center) {
                             Text(String.covertMMDate(timeStamp: model.showDate))
-                                .font(.customAlfa(size: 9))
+                                .font(.system(size: 9))
                                 .padding(.trailing, -5)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.trailing)
                             Text("|")
-                                .font(.customAlfa(size: 9))
+                                .font(.system(size: 9))
                                 .foregroundColor(.white)
                             Text(String.timeStampToWeekday(timeStamp: model.showDate))
-                                .font(.customAlfa(size: 9))
+                                .font(.system(size: 9))
                                 .padding(.leading, -5)
                                 .foregroundColor(.white)
                                 .multilineTextAlignment(.leading)
-                        
                         }
                         Spacer()
                     }
@@ -137,6 +137,7 @@ struct MusicBigWidget: MusicWidget, View {
             .frame(width: geo.size.width, height: geo.size.height)
             .background(Color.init(hex: 0x201717))
         }
+        .widgetURL(URL(string: "quzuoke://musiclist?index=0"))
     }
 }
 

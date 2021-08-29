@@ -11,12 +11,12 @@ import Combine
 import SwiftyJSON
 
 struct LoadMusicRequest {
-    let page: Int
+    let store: Store
     
     func toViewModel(data: Data) -> [MusicViewModel] {
         var result:[MusicViewModel] = []
         let item:MusicListModel = try! JSONDecoder().decode(MusicListModel.self, from: data);
-        var num = 0;
+        var num = store.appState.musicList.dataList.count;
         for model in item.data {
             var viewModel = MusicViewModel(music: model)
             viewModel.music.id = num;
@@ -28,7 +28,7 @@ struct LoadMusicRequest {
     
     var musicPublisher: AnyPublisher<[MusicViewModel], AppError> {
         URLSession.shared
-            .dataTaskPublisher(for: URL(string: "http://loopwhere.com/getSendClinetData")!)
+            .dataTaskPublisher(for: URL(string: "http://loopwhere.com/getSendClinetData?page=\(store.appState.musicList.page)&size=\(store.appState.musicList.pageSize)")!)
             .map {toViewModel(data:$0.data)}
             .mapError { AppError.networkingFailed($0) }
             .receive(on: DispatchQueue.main)

@@ -94,14 +94,18 @@ extension AppState {
 
 extension AppState {
     struct MusicList {
+        var page = 1
+        var pageSize = 20
+        var selectionRow = 0
+        var loadmore = false
         var loadingMusics = false
         var musicLoadingError: AppError?
-        var musicList: [Int: MusicViewModel]?
+        var dataList: [MusicViewModel] = []
         
         func displayMusic(with settings: Settings) -> [MusicViewModel] {
-            guard let musicList = musicList else {
-                return []
-            }
+//            guard let musicList = dataList else {
+//                return []
+//            }
             let sortFunc: (MusicViewModel, MusicViewModel) -> Bool
             switch settings.sorting {
             case .id:
@@ -109,7 +113,7 @@ extension AppState {
             default:
                 sortFunc = { $0.id < $1.id }
             }
-            return musicList.values.sorted(by: sortFunc);
+            return dataList.sorted(by: sortFunc);
         }
     }
 }

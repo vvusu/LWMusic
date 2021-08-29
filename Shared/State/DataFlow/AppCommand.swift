@@ -67,7 +67,7 @@ struct LoadMusicListCommand: AppCommand {
     func execute(in store: Store) {
         let token = SubscriptionToken()
         LoadMusicRequest(
-            page: 1
+            store: store
         ).musicPublisher
         .sink(
             receiveCompletion: { complete in

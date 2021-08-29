@@ -9,18 +9,18 @@ import SwiftUI
 import WidgetKit
 import Intents
 
-struct Provider: IntentTimelineProvider {
+struct Provider: TimelineProvider {
     
     func placeholder(in context: Context) -> WidgetEntry {
         WidgetEntry(date: Date(), config: MusicWidgetConfig.createEmpty(name: ""))
     }
-
-    func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (WidgetEntry) -> ()) {
+    
+    func getSnapshot(in context: Context, completion: @escaping (WidgetEntry) -> ()) {
         let entry = WidgetEntry(date: Date(), config: MusicWidgetConfig.createEmpty(name: ""))
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let currentDate = Date()
         let updateDate = Calendar.current.date(byAdding: .minute, value: 5, to: currentDate)
         MusicWidgetRquest.request { (result) in
@@ -72,11 +72,11 @@ struct LWMusicWidget: Widget {
     let kind: String = "MusicWidget"
 
     var body: some WidgetConfiguration {
-        IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             LWMusicWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("音乐小组件")
-        .description("添加小组件来显示乐队信息")
+        .configurationDisplayName("音乐日历")
+        .description("每日音乐推荐")
         .supportedFamilies([.systemMedium,.systemLarge])
     }
 }
