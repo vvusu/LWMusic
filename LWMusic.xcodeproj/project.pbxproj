@@ -92,8 +92,11 @@
 		AF7F4BBD26BAF15100B2D74E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F4BBB26BAF15100B2D74E /* ImagePicker.swift */; };
 		AF88B4F326D1E008008D3085 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF88B4F226D1E008008D3085 /* Launch Screen.storyboard */; };
 		AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9E6CB32683583E008DA489 /* CalculatorView.swift */; };
+		AFA6BBBF26DD07C1005FE9A1 /* MusicShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6BBBE26DD07C1005FE9A1 /* MusicShare.swift */; };
+		AFA6BBC126DD3A4D005FE9A1 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6BBC026DD3A4D005FE9A1 /* ImageHandler.swift */; };
 		AFBA378F26BFFF7300A2B853 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF21A558266F498300607FCA /* Assets.xcassets */; };
 		AFBA379126C1742800A2B853 /* PoetryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA379026C1742800A2B853 /* PoetryRequest.swift */; };
+		AFC0028926DE9B3C00A2FF5A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AFC0028826DE9B3C00A2FF5A /* SDWebImageSwiftUI */; };
 		E93F3BC5582836106D2DB3DB /* Pods_LWMusic__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +206,8 @@
 		AF7F4BBB26BAF15100B2D74E /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AF88B4F226D1E008008D3085 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF9E6CB32683583E008DA489 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		AFA6BBBE26DD07C1005FE9A1 /* MusicShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicShare.swift; sourceTree = "<group>"; };
+		AFA6BBC026DD3A4D005FE9A1 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		AFBA379026C1742800A2B853 /* PoetryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoetryRequest.swift; sourceTree = "<group>"; };
 		BA5EA5DA6D317C1F70E13E4F /* Pods-LWMusic (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LWMusic (iOS).debug.xcconfig"; path = "Target Support Files/Pods-LWMusic (iOS)/Pods-LWMusic (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 		CD8D6A1EC73061E1A27D9113 /* Pods_LWMusic__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LWMusic__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC0028926DE9B3C00A2FF5A /* SDWebImageSwiftUI in Frameworks */,
 				AF6A9ECD26B3EEB000B1AC3E /* SwiftyJSON in Frameworks */,
 				AF6A9EC426B3DAB300B1AC3E /* Alamofire in Frameworks */,
 				AF6A9EC726B3DB7200B1AC3E /* Reachability in Frameworks */,
@@ -449,6 +455,7 @@
 				AF7F4BB826BAF0A000B2D74E /* IntentHandler.swift */,
 				AF7F4BBB26BAF15100B2D74E /* ImagePicker.swift */,
 				AF0B908F26DBD91100A7D6BF /* ScrollViewUtils.swift */,
+				AFA6BBC026DD3A4D005FE9A1 /* ImageHandler.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -496,6 +503,7 @@
 			children = (
 				AF2DE957269C9A920099D94F /* MusicList.swift */,
 				AF2DE959269C9ABF0099D94F /* MusicDetail.swift */,
+				AFA6BBBE26DD07C1005FE9A1 /* MusicShare.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -537,6 +545,7 @@
 				AF6A9EC626B3DB7200B1AC3E /* Reachability */,
 				AF6A9EC926B3DDE200B1AC3E /* KeychainAccess */,
 				AF6A9ECC26B3EEB000B1AC3E /* SwiftyJSON */,
+				AFC0028826DE9B3C00A2FF5A /* SDWebImageSwiftUI */,
 			);
 			productName = "LWMusic (iOS)";
 			productReference = AF21A55D266F498300607FCA /* LWMusic.app */;
@@ -658,6 +667,7 @@
 				AF6A9EC526B3DB7200B1AC3E /* XCRemoteSwiftPackageReference "Reachability" */,
 				AF6A9EC826B3DDE200B1AC3E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 				AF6A9ECB26B3EEB000B1AC3E /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				AFC0028726DE9B3C00A2FF5A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = AF21A55E266F498300607FCA /* Products */;
 			projectDirPath = "";
@@ -819,6 +829,7 @@
 				AF9E6CB42683583E008DA489 /* CalculatorView.swift in Sources */,
 				AF7F4BBC26BAF15100B2D74E /* ImagePicker.swift in Sources */,
 				AF0B905026DB924C00A7D6BF /* SceneDelegate.swift in Sources */,
+				AFA6BBC126DD3A4D005FE9A1 /* ImageHandler.swift in Sources */,
 				AF7F4BB026BAE4A000B2D74E /* MusicWidgetConfig.swift in Sources */,
 				AF21A581266F498300607FCA /* CalculatorRootView.swift in Sources */,
 				AF2DE955269C993F0099D94F /* OverlaySheet.swift in Sources */,
@@ -844,6 +855,7 @@
 				AF2DE956269C993F0099D94F /* SafariView.swift in Sources */,
 				AF21A5AE266F71DA00607FCA /* CalculatorButtonItem.swift in Sources */,
 				AF2DE94D269C939C0099D94F /* EmailCheckingRequest.swift in Sources */,
+				AFA6BBBF26DD07C1005FE9A1 /* MusicShare.swift in Sources */,
 				AF24FFEA267A0493007EA745 /* CalculatorModel.swift in Sources */,
 				AF7F4BAD26BAE42300B2D74E /* MusicWidget.swift in Sources */,
 				AF7F4BB626BAEDBE00B2D74E /* UserDefaults.swift in Sources */,
@@ -1385,6 +1397,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		AFC0028726DE9B3C00A2FF5A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1407,6 +1427,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AF6A9ECB26B3EEB000B1AC3E /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		AFC0028826DE9B3C00A2FF5A /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFC0028726DE9B3C00A2FF5A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

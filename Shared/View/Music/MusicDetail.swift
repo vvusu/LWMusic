@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import Kingfisher
+import SDWebImageSwiftUI
 import MobileCoreServices
 
 struct MusicDetail: View {
     @EnvironmentObject var store: Store
     @State private var mosaicArrowDim = false
     @State private var hasAlbumAuthor = false
-    @State private var showTextInfo = false
     @State private var verticalOffset: CGFloat = 0
     
     let index: Int
@@ -56,15 +55,13 @@ struct MusicDetail: View {
                 VStack {
                     GeometryReader { geometry in
                         ZStack(alignment: .bottom) {
-                            KFImage(URL.init(string: model.music.bandBigCover))
-                                .placeholder({
-                                    Image("music_band_ph")
-                                })
+                            WebImage(url: URL(string: model.music.bandBigCover))
+                                .placeholder{Image("music_band_ph")}
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: geometry.size.width, height: self.getHeightForHeaderImage(geometry))
                                 .clipped()
-                            gradientView()  .frame(height: 100)
+                            gradientView().frame(height: 100)
                         }.offset(x: 0, y: self.getOffsetForHeaderImage(geometry))
                         
                     }.frame(height: screenW*(300/375))
@@ -163,10 +160,8 @@ struct MusicDetail: View {
                                 .animation(.easeInOut(duration: 1.0))
                           
                             ZStack {
-                                KFImage(URL.init(string: (model.music.albums.first?.bigCover ?? "")))
-                                    .placeholder({
-                                        Image("music_album_ph")
-                                    })
+                                WebImage(url: URL(string: (model.music.albums.first?.bigCover ?? "")))
+                                    .placeholder{Image("music_album_ph")}
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width:80, height: 80)
@@ -233,10 +228,7 @@ struct MusicDetail: View {
                         
                         ZStack(alignment: .leading) {
                             Button(action: {
-                                showTextInfo = true
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                                    showTextInfo = false
-                                }
+                                store.appState.musicList.showTextInfo = true
                                 UIPasteboard.general.setValue(model.music.albums.first?.recommend.name ?? "", forPasteboardType: kUTTypePlainText as String)
                             }){
                                 HStack {
@@ -273,7 +265,7 @@ struct MusicDetail: View {
                             
                             Spacer()
                             Button(action: {
-                                print("点击来")
+                                store.appState.musicList.showMusicShare = true
                             }) {
                                 Image("music_share_btn")
                                     .resizable()
@@ -293,18 +285,30 @@ struct MusicDetail: View {
             // 当浏览到A内容的下方，滑动到B内容，再次返回A内容时，A内容默认展示在头部
             .scrollOffsetY($verticalOffset)
 
-            if showTextInfo {
+            if store.appState.musicList.showMusicShare {
+                MusicShare(model: model)
+            }
+            
+            if store.appState.musicList.showTextInfo {
                 Color.black.opacity(0.0)
                     .zIndex(101)
                     .onTapGesture {
-                        withAnimation {showTextInfo.toggle()}
+                        withAnimation(Animation.easeInOut(duration: 2)) {
+                            store.appState.musicList.showTextInfo.toggle()
+                        }
                     }
-                Text("已复制到粘贴板")
+                Text(store.appState.musicList.savePhotoSuccess ? "已保存到相册中":"已复制到粘贴板")
                     .padding(15)
                     .background(Color.white)
                     .cornerRadius(15)
                     .transition(.scale)
                     .zIndex(102)
+                    .onAppear() {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                            store.appState.musicList.showTextInfo = false
+                            store.appState.musicList.savePhotoSuccess = false
+                        }
+                    }
             }
         }
     }

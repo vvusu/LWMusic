@@ -99,13 +99,13 @@ extension AppState {
         var selectionRow = 0
         var loadmore = false
         var loadingMusics = false
+        var showTextInfo = false
+        var savePhotoSuccess = false
+        var showMusicShare = false
         var musicLoadingError: AppError?
         var dataList: [MusicViewModel] = []
         
         func displayMusic(with settings: Settings) -> [MusicViewModel] {
-//            guard let musicList = dataList else {
-//                return []
-//            }
             let sortFunc: (MusicViewModel, MusicViewModel) -> Bool
             switch settings.sorting {
             case .id:
