@@ -119,10 +119,15 @@ struct MusicShare: View {
                                 .font(.system(size: 9))
                                 .padding(.init(top: 1, leading: 1, bottom: 0, trailing: 1))
                                 .lineLimit(1)
-                                .cornerRadius(2)
                                 .background(Color.black)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color.white)
+                                .cornerRadius(0)
+                            
+//                            Image("share_lable_bg")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 4, height: 4)
                             Spacer()
                         }
       
@@ -131,13 +136,15 @@ struct MusicShare: View {
                                 .font(.system(size: 9))
                                 .padding(.init(top: 0, leading: 1, bottom: 1, trailing: 1))
                                 .lineLimit(1)
-                                .cornerRadius(2)
                                 .background(Color.black)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color.white)
+                                .cornerRadius(0)
                             Spacer()
+                        }
                     }
-                    }.padding(.bottom, 0)
+                    .padding(.leading, 6)
+                    .padding(.bottom, 8)
                 }
                 .frame(width: screenW - 100 * 2, height: screenW - 100 * 2)
                 .padding(.bottom, 53)
