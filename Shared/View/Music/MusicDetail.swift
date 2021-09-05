@@ -14,7 +14,8 @@ struct MusicDetail: View {
     @State private var mosaicArrowDim = false
     @State private var hasAlbumAuthor = false
     @State private var verticalOffset: CGFloat = 0
-    
+    @State private var showMusicShare = false
+
     let index: Int
     let model: MusicViewModel
     let screenW = UIScreen.main.bounds.width;
@@ -83,8 +84,8 @@ struct MusicDetail: View {
                         }
                         .onAppear() {
                             hasAlbumAuthor = model.music.albums.first?.author != ""
-                            mosaicArrowDim = true
                             verticalOffset = 0
+                            mosaicArrowDim = true
                             // 判断是否时最后一个，如果是最后一个加载更多数据
                             if (index == store.appState.musicList.dataList.count - 1) {
                                 store.appState.musicList.page += 1
@@ -265,12 +266,14 @@ struct MusicDetail: View {
                             
                             Spacer()
                             Button(action: {
-                                store.appState.musicList.showMusicShare = true
-                            }) {
+                                showMusicShare = true
+                            },label: {
                                 Image("music_share_btn")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 40, height: 40, alignment: .leading)
+                            }).sheet(isPresented: $showMusicShare) {
+                                MusicShare(model: model).background(BackgroundClearView())
                             }
                         }
                         .padding(.top, 60)
@@ -285,10 +288,6 @@ struct MusicDetail: View {
             // 当浏览到A内容的下方，滑动到B内容，再次返回A内容时，A内容默认展示在头部
             .scrollOffsetY($verticalOffset)
 
-            if store.appState.musicList.showMusicShare {
-                MusicShare(model: model)
-            }
-            
             if store.appState.musicList.showTextInfo {
                 Color.black.opacity(0.0)
                     .zIndex(101)
@@ -312,6 +311,17 @@ struct MusicDetail: View {
             }
         }
     }
+}
+
+struct BackgroundClearView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        DispatchQueue.main.async {
+            view.superview?.superview?.backgroundColor = .clear
+        }
+        return view
+    }
+    func updateUIView(_ uiView: UIView, context: Context) {}
 }
 
 struct MusicDetail_Previews: PreviewProvider {

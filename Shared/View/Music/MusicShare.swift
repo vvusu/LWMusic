@@ -9,6 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MusicShare: View {
+    @Environment(\.presentationMode) var mode
     @EnvironmentObject var store: Store
     @State var contentRect: CGRect = CGRect()
     let model: MusicViewModel
@@ -122,12 +123,7 @@ struct MusicShare: View {
                                 .background(Color.black)
                                 .multilineTextAlignment(.leading)
                                 .foregroundColor(Color.white)
-                                .cornerRadius(0)
-                            
-//                            Image("share_lable_bg")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 4, height: 4)
+                                .cornerRadius(0)                            
                             Spacer()
                         }
       
@@ -190,14 +186,10 @@ struct MusicShare: View {
                 Button(action: {
                     // 保存图片到相册
                     let image = contentView.snapshot()
-//                    let image = contentView.takeScreenshot(origin: contentRect.origin, size: contentRect.size)
                     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                    
                     store.appState.musicList.showTextInfo = true
                     store.appState.musicList.savePhotoSuccess = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                        store.appState.musicList.showMusicShare = false
-                    }
+                    self.mode.wrappedValue.dismiss()
                 }){
                     Text("保存到相册").font(.system(size: 12)).foregroundColor(Color.white).frame(width:screenW - 60 ,height: 40)
                 }
@@ -210,7 +202,7 @@ struct MusicShare: View {
         .frame(width: screenW, height: screenH)
         .background(Color.init(hex: 0x000000, alpha: 0.8))
         .onTapGesture {
-            store.appState.musicList.showMusicShare = false
+            self.mode.wrappedValue.dismiss()
         }
     }
 }

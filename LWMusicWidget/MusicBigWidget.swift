@@ -60,7 +60,7 @@ struct MusicBigWidget: MusicWidget, View {
                                     .font(.system(size: 26))
                                     .lineLimit(1)
                                     .foregroundColor(.white)
-                                Text("- \(model.albumAuthor)")
+                                Text("- \(model.bandName)")
                                     .font(.system(size: 9))
                                     .padding(.top,0)
                                     .lineLimit(1)
